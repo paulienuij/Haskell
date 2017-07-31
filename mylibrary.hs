@@ -4,7 +4,8 @@ module MyLibrary
 , primes
 , primeFactors'
 , fib
-,pandigital
+, pandigital
+, factorial
 ) where
 
 quicksort :: (Ord a) => [a] -> [a]
@@ -14,6 +15,7 @@ quicksort (p:xs) =
         larger = [ a | a <- xs, a > p]
     in quicksort smalloreq ++ [p] ++ quicksort larger
 
+fib:: [Integer]
 fib = 0 : 1 : zipWith (+) fib (tail fib)
 
 --digits :: Int -> [Int]
@@ -42,3 +44,6 @@ noDuplicates x:xs
     noDuplicates x:xs 
         | x `elem` xs  = noDuplicates xs
         | otherwise =  x: noDuplicates xs
+
+--factorial :: [Integer]
+factorial n = product [1..n]
