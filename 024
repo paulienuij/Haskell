@@ -1,0 +1,3 @@
+perm [ x | x <- [12..210], a<-[0..2], b<-[0..2], (digits x) !! a /= (digits x !! b), a/=b]
+
+main = putStrLn $ show $ perm 
